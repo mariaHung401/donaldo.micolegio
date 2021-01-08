@@ -7,7 +7,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
@@ -23,23 +23,46 @@ export default function HeaderLinks() {
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Link to="/profile-page" className={classes.navLink}>
-          Equipo Docente
+        <Link to="/Reseña-Historica" className={classes.navLink}>
+          Reseña Histórica
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link to="/Filosofia" className={classes.navLink}>
+          Filosofía
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Menú"
+          buttonText="Equipo Docente"
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
           }}
-          buttonIcon={FormatAlignJustifyIcon}
+          buttonIcon={AccountCircleIcon}
           dropdownList={[
-            <Link to="/" className={classes.navLink}>
-              Actividades
-            </Link>
+            <Link to="/Directivos" className={classes.navLink}>
+              Directivos
+            </Link>,
+            <Link to="/Administrativo" className={classes.navLink}>
+              Administrativo
+            </Link>,
+            <Link to="/Educación-Inicial" className={classes.navLink}>
+              Educación Inicial
+            </Link>,
+            <Link to="/Educación-Primaria" className={classes.navLink}>
+              Educación Primaria
+            </Link>,
+            <Link to="/Educación-Media-General" className={classes.navLink}>
+              Educación Media General
+            </Link>,
+            <Link to="/Educación-Especialistas" className={classes.navLink}>
+              Educación Especialistas
+            </Link>,
+            <Link to="/Obreros" className={classes.navLink}>
+              Bedeles
+            </Link>,
           ]}
         />
       </ListItem>

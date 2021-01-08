@@ -11,17 +11,9 @@ import Parallax from "components/Parallax/Parallax.js";
 
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import HeaderLeft from "components/Header/HeaderLeft.js";
-import SectionBasics from "./Sections/SectionBasics.js";
-import SectionNavbars from "./Sections/SectionNavbars.js";
-import SectionTabs from "./Sections/SectionTabs.js";
-import SectionPills from "./Sections/SectionPills.js";
-import SectionNotifications from "./Sections/SectionNotifications.js";
-import SectionTypography from "./Sections/SectionTypography.js";
-import SectionJavascript from "./Sections/SectionJavascript.js";
 import SectionCarousel from "./Sections/SectionCarousel.js";
 import SectionCompletedExamples from "./Sections/SectionCompletedExamples.js";
 import SectionLogin from "./Sections/SectionLogin.js";
-import SectionExamples from "./Sections/SectionExamples.js";
 import SectionDownload from "./Sections/SectionDownload.js";
 
 import ProductSection from "views/LandingPage/Sections/ProductSection.js";
@@ -35,6 +27,8 @@ const useStyles = makeStyles(styles);
 export default function Components(props) {
   const classes = useStyles();
   const { ...rest } = props;
+
+  const collegeName = "U. E. P. Donaldo García López";
   return (
     <div>
       <Header
@@ -49,13 +43,13 @@ export default function Components(props) {
         {...rest}
       />
 
-      <Parallax image={require("assets/img/colegio/fondo-ondas.jpg")}>
+      <Parallax image={require("assets/img/colegio/paper.png")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
                 <h2>
-                  <strong> U. E. P. Donaldo García López</strong>
+                  <strong>{collegeName}</strong>
                 </h2>
               </div>
             </GridItem>
@@ -70,6 +64,7 @@ export default function Components(props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <ProductSection />
+        <SectionCarousel />
         <TeamSection />
         <SectionCompletedExamples />
         <SectionLogin />

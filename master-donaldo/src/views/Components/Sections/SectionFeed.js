@@ -22,29 +22,29 @@ export type Props = {
   }>,
   account: string,
   classes: { [$Keys<$Call<typeof styles>>]: string },
-  status: "completed" | "loading" | "failed",
+  status: 'completed' | 'loading' | 'failed',
 };
 
 const InstaGrid = ({ classes, media, account, status}: Props) => {
   return (
     <Grid container spacing={32} className={classes.wrapper}>
       {media &&
-        status === "completed" &&
+        status === 'completed' &&
         media.map(({ displayImage, id, postLink, accessibilityCaption }) => (
-          <Grid item xs={12} sm={6} md={6} key={id || displayImage}>
+          <Grid item xs={12} sm={6} md={4} key={id || displayImage}>
             <ButtonBase
               href={postLink || `https://www.instagram.com/${account}/`}
             >
               <img
                 src={displayImage}
-                alt={accessibilityCaption || "Instagram picture"}
+                alt={accessibilityCaption || 'Instagram picture'}
                 className={classes.image}
               />
             </ButtonBase>
           </Grid>
         ))}
-      {status === "loading" && <p>Cargando...</p>}
-      {status === "failed" && <p>Mira Nuestro Instagram</p>}
+      {status === 'loading' && <p>Cargando..</p>}
+      {status === 'failed' && <p>Haz clic para ir a nustro instagram</p>}
     </Grid>
   );
 };
@@ -53,4 +53,4 @@ InstaGrid.defaultProps = {
   media: undefined,
 };
 
-export default compose(withInstagramFeed, withStyles(styles))(InstaGrid);
+export default compose(withInstagramFeed, withStyles(styles),)(InstaGrid) ;

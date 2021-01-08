@@ -1,11 +1,17 @@
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
+import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
+import Carousel from "react-slick";
+
+import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
+
+import VM from "assets/img/colegio/misionYvision.jpg";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
@@ -13,52 +19,44 @@ const useStyles = makeStyles(styles);
 
 export default function TeamSection() {
   const classes = useStyles();
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+  };
+
+  const name = "Filosofía Institucional";
+
   return (
     <div className={classes.section}>
-      <h3 className={classes.title}>Filosofía Institucional</h3>
+      <h3 className={classes.title}>{name}</h3>
       <div>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <Card plain>
-              <h4 className={classes.cardTitle}>
-                Misión
-                <br />
-              </h4>
-              <CardBody>
-                <h5>
-                  La Unidad Educativa “Donaldo García López” busca la aplicación
-                  y perfeccionamiento de un sistema y metodología educativa que
-                  mediante la actividad que demandan los programas vigentes,
-                  aporte los elementos que el ser humano, sujeto del proceso,
-                  necesita para crecer libre, independiente, capaz, en armonía
-                  con el medio en que vive, consciente de su necesidad de
-                  comprender y aprender constantemente.
-                </h5>
-              </CardBody>
+        <GridContainer justify="center">
+          <GridItem xs={12} sm={12} md={8} className={classes.marginAuto}>
+            <Card plain carousel>
+              <Carousel {...settings}>
+                <div>
+                  <img src={VM} alt="First slide" className="slick-image" />
+                </div>
+              </Carousel>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
-            <Card plain>
-              <h4 className={classes.cardTitle}>
-                Visión
-                <br />
-              </h4>
-              <CardBody>
-                <h5>
-                  Ofrecer a la comunidad una opción educativa cuyos postulados y
-                  práctica garantizan una preparación activa, real, aplicable a
-                  todos los momentos de la convivencia, orientada al logro de un
-                  estado duradero de armonía, que sustente la paz, el bienestar
-                  y la integración, posibles a partir del ser humano, que
-                  convertido en ciudadano independiente, libre y capaz,
-                  promoverá un desarrollo material, intelectual y espiritual,
-                  acorde con los recursos y vocación nacional.
-                </h5>
-              </CardBody>
-            </Card>
+        </GridContainer>
+        <GridContainer justify="center">
+          <GridItem>
+            <Link to="/Filosofia">
+              <Button color="info" simple target="_blank">
+                <ChevronRightRoundedIcon />
+                Seguir leyendo
+              </Button>
+            </Link>
           </GridItem>
         </GridContainer>
       </div>
     </div>
   );
 }
+

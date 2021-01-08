@@ -11,14 +11,14 @@ const componentsStyle = {
   },
   brand: {
     color: "#000000",
-    textAlign: "center",
+    // textAlign: "center",
   },
   title: {
     fontSize: "4.2rem",
     fontWeight: "600",
     display: "inline-block",
     position: "static",
-    textAlign: "center",
+    // textAlign: "center",
   },
   subtitle: {
     fontSize: "1.313rem",

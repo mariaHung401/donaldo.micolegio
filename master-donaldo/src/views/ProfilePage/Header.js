@@ -9,18 +9,18 @@ import HeaderLeft from "components/Header/HeaderLeft.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import stylesComp from "assets/jss/material-kit-react/views/components.js";
 
 import logo from "assets/img/colegio/logo.png";
 
-const useStyles = makeStyles(styles);
 const useStylesComp = makeStyles(stylesComp);
 
 export default function Page1(props) {
-  const classes = useStyles();
   const classesComp = useStylesComp();
   const { ...rest } = props;
+
+  const collegeName = "U. E. P. Donaldo García López";
+  const subName = "Equipo Docente";
   return (
     <div>
       <Header
@@ -34,13 +34,14 @@ export default function Page1(props) {
         }}
         {...rest}
       />
-      <Parallax image={require("assets/img/colegio/fondo-ondas.jpg")}>
+      <Parallax image={require("assets/img/colegio/teacher.png")}>
         <div className={classesComp.container}>
           <GridContainer>
             <GridItem>
               <div className={classesComp.brand}>
+                <h6>{subName}</h6>
                 <h2>
-                  <strong> U. E. P. Donaldo García López</strong>
+                  <strong>{collegeName}</strong>
                 </h2>
               </div>
             </GridItem>
