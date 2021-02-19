@@ -13,6 +13,8 @@ import stylesComp from "assets/jss/material-kit-react/views/components.js";
 
 import logo from "assets/img/colegio/logo.png";
 
+// import Components from "views/Components/Components.js";
+
 const useStylesComp = makeStyles(stylesComp);
 
 export default function Page1(props) {

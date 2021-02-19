@@ -18,7 +18,7 @@ import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
 const useStyles = makeStyles(styles);
 
-export default function History() {
+export default function History(props) {
   const classes = useStyles();
   const settings = {
     dots: true,
@@ -29,7 +29,7 @@ export default function History() {
     autoplay: false,
   };
 
-  const name = "Reseña Histórica del Plantel"
+  const name = "Reseña Histórica del Plantel";
 
   const text = {
     strongmessage: "La Unidad Educativa: ",
@@ -40,7 +40,6 @@ export default function History() {
     message3:
       "Para el año escolar 1996 – 97 se inicia, el 7mo grado con 32 alumnos y sucesivamente en los años siguiente se fueron incorporando los demás años de bachillerato (antes III etapa de educación básica), hasta completar el ciclo completo hasta el 5to año en el periodo escolar 2000 – 2001 desde allí la institución ha logrado egresar promociones sucesivas de bachilleres en ciencias hasta la fecha.",
   };
-
   return (
     <div>
       <Header />

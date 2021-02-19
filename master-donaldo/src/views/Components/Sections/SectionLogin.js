@@ -11,17 +11,15 @@ import SectionFeed from "./SectionFeed";
 
 const useStyles = makeStyles(styles);
 
-export default function SectionCarousel() {
+export default function SectionCarousel(props) {
   const classes = useStyles();
-
-  const name = "Mira Nuestro Instagram";
 
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2>{name}</h2>
+            <h2>{props.props.title}</h2>
             <Button
               color="google"
               href="https://www.instagram.com/uedonaldog/"

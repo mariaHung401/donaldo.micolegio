@@ -16,7 +16,7 @@ import styles from "assets/jss/material-kit-react/views/componentsSections/carou
 
 const useStyles = makeStyles(styles);
 
-export default function SectionCarousel() {
+export default function SectionCarousel(props) {
   const classes = useStyles();
   const settings = {
     dots: true,
@@ -27,13 +27,12 @@ export default function SectionCarousel() {
     autoplay: false,
   };
 
-  const name = "Nuestras Instalaciones"
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h3 className={classes.title}>{name} </h3>
+            <h3 className={classes.title}>{props.props.name} </h3>
           </GridItem>
           <GridItem xs={12} sm={6} md={6} className={classes.marginAuto}>
             <Card carousel>

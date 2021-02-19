@@ -17,7 +17,7 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/team
 
 const useStyles = makeStyles(styles);
 
-export default function TeamSection() {
+export default function TeamSection(props) {
   const classes = useStyles();
   const settings = {
     dots: true,
@@ -28,11 +28,9 @@ export default function TeamSection() {
     autoplay: false,
   };
 
-  const name = "Filosofía Institucional";
-
   return (
     <div className={classes.section}>
-      <h3 className={classes.title}>{name}</h3>
+      <h3 className={classes.title}>{props.props.name}</h3>
       <div>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8} className={classes.marginAuto}>

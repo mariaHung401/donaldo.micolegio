@@ -9,22 +9,18 @@ import styles from "assets/jss/material-kit-react/views/componentsSections/downl
 
 const useStyles = makeStyles(styles);
 
-export default function SectionDownload() {
+export default function SectionDownload(props) {
   const classes = useStyles();
-
-  const name = "Contácta con Nosotros";
-  const text = "30 años de Excelencia Educativa en Villa del Rosario";
-  const number = "0263-4513271";
 
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer className={classes.textCenter} justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2>{name} </h2>
-            <h6>{text} </h6>
+            <h2>{props.props.title} </h2>
+            <h6>{props.props.text} </h6>
             <h4>
-              <strong>{number} </strong>
+              <strong>{props.props.number} </strong>
             </h4>
           </GridItem>
         </GridContainer>
